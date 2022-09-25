@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8734533840325201297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8734533840325201327}
+  - component: {fileID: 8734533840325201296}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8734533840325201327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8734533840325201297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 416.50403, y: 257.78574, z: -346.40445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8734533840325201296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8734533840325201297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f311e38a5646f90429d5447b119cc3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: MainTheme
+    audioClip: {fileID: 8300000, guid: 3ba28a83b83534e449da8d3ecbf7764b, type: 3}
+    volume: 0.105
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: GunFire
+    audioClip: {fileID: 8300000, guid: e70eb034c8ae4fe42b00d809716998e4, type: 3}
+    volume: 0.35
+    pitch: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: GunCancle
+    audioClip: {fileID: 8300000, guid: 5f2821fc1d23646259af2167fc82a481, type: 3}
+    volume: 0.3
+    pitch: 0.34
+    loop: 0
+    source: {fileID: 0}
+  - name: Goal
+    audioClip: {fileID: 8300000, guid: c6b44363b0b2f8447a49c2e1e91642b1, type: 3}
+    volume: 0.493
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Button
+    audioClip: {fileID: 8300000, guid: 9276693026e2cac408304f305f155690, type: 3}
+    volume: 0.184
+    pitch: 1.28
+    loop: 0
+    source: {fileID: 0}
+  - name: Die
+    audioClip: {fileID: 8300000, guid: ec70ab67d2b25fc42b1e59b418516144, type: 3}
+    volume: 1
+    pitch: 1.28
+    loop: 0
+    source: {fileID: 0}

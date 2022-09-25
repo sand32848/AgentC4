@@ -11,8 +11,10 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if ((layerMask.value & (1 << other.transform.gameObject.layer)) > 0 || layerMask.value == 0)
         {
+            print("C");
             events.Invoke();
             eventWithCollider.Invoke(other.gameObject);
         }
@@ -21,8 +23,10 @@ public class CollisionDetector : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+        print("D");
         if ((layerMask.value & (1 << collision.transform.gameObject.layer)) > 0 || layerMask.value == 0)
         {
+            print("D");
             events.Invoke();
             eventWithCollider.Invoke(collision.gameObject);
         }
