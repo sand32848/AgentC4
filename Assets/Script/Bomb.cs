@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
     [SerializeField] private Renderer renderer;
     private Collider collider;
+    private CameraShake camShake => GameObject.FindGameObjectWithTag("Player").GetComponent<CameraShake>();
 
     private void Start()
     {
@@ -32,21 +33,6 @@ public class Bomb : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         transform.parent = collision.transform;
-        //print(collision.transform.name);
-        //// creates joint
-        //FixedJoint joint = null;
-
-        //if (!GetComponentInChildren<FixedJoint>())
-        //{
-        //    joint = gameObject.AddComponent<FixedJoint>();
-        //}
-       
-        //// sets joint position to point of contact
-        //joint.anchor = collision.contacts[0].point;
-        //// conects the joint to the other object
-        //joint.connectedBody = collision.contacts[0].otherCollider.transform.GetComponentInParent<Rigidbody>();
-        //// Stops objects from continuing to collide and creating more joints
-        //joint.enableCollision = false;
 
         collider.enabled = false;
         rb.useGravity = false;
@@ -58,6 +44,8 @@ public class Bomb : MonoBehaviour
     IEnumerator explode()
     {
         Destroy(Instantiate(particle, transform.position, Quaternion.identity), 3f);
+
+        camShake.shakeCamera(0.5f,30);
 
         audioSources[Random.Range(0, audioSources.Count)].Play();
 

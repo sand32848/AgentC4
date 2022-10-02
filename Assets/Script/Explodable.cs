@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -15,6 +16,7 @@ public class Explodable : MonoBehaviour
 
     [SerializeField] private UnityEvent oneTimeExplodeEvent;
     [SerializeField] private UnityEvent explodeEvent;
+    public Action explodeAction;
 
     private bool firstimeExplode;
 
@@ -66,6 +68,7 @@ public class Explodable : MonoBehaviour
         }
 
         explodeEvent?.Invoke();
+        explodeAction?.Invoke();
     }
 
     public void enableCollider()
@@ -88,4 +91,6 @@ public class Explodable : MonoBehaviour
     {
         return rigidArray;
     }
+
+
 }
