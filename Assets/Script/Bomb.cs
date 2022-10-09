@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
     [SerializeField] private Renderer renderer;
     private Collider collider;
-    private CameraShake camShake => GameObject.FindGameObjectWithTag("Player").GetComponent<CameraShake>();
+    private CinemachineImpulseSource impulseSource => GetComponent<CinemachineImpulseSource>();
 
     private void Start()
     {
@@ -45,7 +46,7 @@ public class Bomb : MonoBehaviour
     {
         Destroy(Instantiate(particle, transform.position, Quaternion.identity), 3f);
 
-        camShake.shakeCamera(0.5f,30);
+        impulseSource.GenerateImpulse();
 
         audioSources[Random.Range(0, audioSources.Count)].Play();
 
@@ -53,14 +54,17 @@ public class Bomb : MonoBehaviour
 
         for (int i = 0; i < explodeHit.Length; i++)
         {
-            if (explodeHit[i].TryGetComponent(out Animator animator))
-            {
-                animator.enabled = false;
-            }
-
             if (explodeHit[i].TryGetComponent(out Explodable explode))
             {
-                explode.enableCollider();
+                if (!explode.disableRagdoll) 
+                {
+                    explode.enableCollider();
+                    if (explodeHit[i].TryGetComponent(out Animator animator))
+                    {
+                        animator.enabled = false;
+                    }
+                }
+    
             }
         }
 

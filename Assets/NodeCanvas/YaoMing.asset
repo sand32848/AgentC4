@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3f478ef69fbe04fa9ed3664a8a443e, type: 3}
+  m_Name: YaoMing
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"So
+    you have come to challenge me?"},"_actorName":"Yao Ming","_actorParameterID":"d2d05862-02dc-44c7-ab2d-aca2d68425de","_color":{"a":1.0},"_position":{"x":371.3893,"y":354.396},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Then
+    a trial you must face..."},"_actorName":"Yao Ming","_actorParameterID":"d2d05862-02dc-44c7-ab2d-aca2d68425de","_position":{"x":381.3893,"y":467.396},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_action":{"method":{"_baseInfo":"DialougeRequester|EndDialougeFunction|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":398.6764,"y":570.1792},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Yao
+    Ming","_id":"d2d05862-02dc-44c7-ab2d-aca2d68425de","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -42, y: -199}
+    _zoomFactor: 0.9999108
+  _haltSerialization: 0
+  actorParameters:
+  - _keyName: Yao Ming
+    _id: d2d05862-02dc-44c7-ab2d-aca2d68425de
+    _actorObject: {fileID: 0}

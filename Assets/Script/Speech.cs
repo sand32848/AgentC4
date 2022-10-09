@@ -14,7 +14,10 @@ public class Speech : MonoBehaviour
     private int currentDsiplayingText = 0;
     public bool continuous;
     public bool oneTime;
+
     [SerializeField] private UnityEvent onSpeechFinish;
+    private Vector3 defaultScale => speechBubble.transform.localScale;
+    private float distanceFromPlayer;
 
     private GameObject player => GameObject.FindGameObjectWithTag("Player");
 
@@ -22,6 +25,8 @@ public class Speech : MonoBehaviour
     {
         Vector3 playerPos = new Vector3(player.transform.position.x, speechBubble.transform.position.y, player.transform.position.z);
         speechBubble.transform.LookAt(playerPos);
+
+       
     }
 
     public void ActivateText()
@@ -58,4 +63,6 @@ public class Speech : MonoBehaviour
             }
         }
     }
+
+  
 }

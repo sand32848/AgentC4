@@ -8,8 +8,10 @@ using UnityEngine.Events;
 
 public class Explodable : MonoBehaviour
 {
+    [SerializeField] private bool explodable = true;
     [SerializeField] private bool pieces;
     [SerializeField] private bool NPC;
+    [field : SerializeField] public bool disableRagdoll { get;private set; }
 
     [ShowIf("pieces")]
     [SerializeField] private UnfreezeFragment unfreezeFragment;
@@ -43,7 +45,6 @@ public class Explodable : MonoBehaviour
 
         }
 
-
         foreach (CharacterJoint joint in jointArray)
         {
             joint.enableProjection = true;
@@ -54,6 +55,7 @@ public class Explodable : MonoBehaviour
 
     public void onExplode()
     {
+        if (!explodable) return;
         if (pieces)
         {
             unfreezeFragment?.Unfreeze();
@@ -92,5 +94,9 @@ public class Explodable : MonoBehaviour
         return rigidArray;
     }
 
+    public void setExplodable(bool _explodable)
+    {
+        explodable = _explodable;
+    }
 
 }
