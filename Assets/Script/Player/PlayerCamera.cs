@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private float mouseSensitivity;
-    private Camera camera;
+    private CinemachineVirtualCamera camera;
     private Transform playerTransform;
 
     float xRotation = 0;
     private void Awake()
     {
         playerTransform = GetComponent<Transform>();
-        camera = GetComponentInChildren<Camera>();
+        camera = GetComponentInChildren<CinemachineVirtualCamera>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 

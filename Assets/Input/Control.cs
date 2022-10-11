@@ -89,6 +89,15 @@ public partial class @Control : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Q"",
+                    ""type"": ""Button"",
+                    ""id"": ""d877cc0b-81bf-4b9a-8ad8-835a0f6d4724"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @Control : IInputActionCollection2, IDisposable
                     ""action"": ""RightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b39e46b-5748-4a4b-b247-3c191f31c419"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Q"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
         m_BaseControl_E = m_BaseControl.FindAction("E", throwIfNotFound: true);
         m_BaseControl_LeftClick = m_BaseControl.FindAction("LeftClick", throwIfNotFound: true);
         m_BaseControl_RightClick = m_BaseControl.FindAction("RightClick", throwIfNotFound: true);
+        m_BaseControl_Q = m_BaseControl.FindAction("Q", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +314,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
     private readonly InputAction m_BaseControl_E;
     private readonly InputAction m_BaseControl_LeftClick;
     private readonly InputAction m_BaseControl_RightClick;
+    private readonly InputAction m_BaseControl_Q;
     public struct BaseControlActions
     {
         private @Control m_Wrapper;
@@ -304,6 +326,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
         public InputAction @E => m_Wrapper.m_BaseControl_E;
         public InputAction @LeftClick => m_Wrapper.m_BaseControl_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_BaseControl_RightClick;
+        public InputAction @Q => m_Wrapper.m_BaseControl_Q;
         public InputActionMap Get() { return m_Wrapper.m_BaseControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -334,6 +357,9 @@ public partial class @Control : IInputActionCollection2, IDisposable
                 @RightClick.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnRightClick;
                 @RightClick.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnRightClick;
                 @RightClick.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnRightClick;
+                @Q.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
+                @Q.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
+                @Q.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
             }
             m_Wrapper.m_BaseControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -359,6 +385,9 @@ public partial class @Control : IInputActionCollection2, IDisposable
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
+                @Q.started += instance.OnQ;
+                @Q.performed += instance.OnQ;
+                @Q.canceled += instance.OnQ;
             }
         }
     }
@@ -372,5 +401,6 @@ public partial class @Control : IInputActionCollection2, IDisposable
         void OnE(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
+        void OnQ(InputAction.CallbackContext context);
     }
 }
