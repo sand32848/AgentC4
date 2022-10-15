@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerThrow : MonoBehaviour
 {
@@ -40,9 +41,14 @@ public class PlayerThrow : MonoBehaviour
         {
             if (detonateCooldown > 0) return;
 
+
             for(int i = 0;  i < bombList.Count; i++)
             {
-                bombList[i].StartCoroutine("explode");
+                if (bombList[i])
+                {
+                    bombList[i].StartCoroutine("explode");
+                }
+
             }
 
             bombList.Clear();

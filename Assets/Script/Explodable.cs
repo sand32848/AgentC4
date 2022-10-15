@@ -22,6 +22,8 @@ public class Explodable : MonoBehaviour
 
     private bool firstimeExplode;
 
+    public Fracture fracture => GetComponent<Fracture>();
+
     private Renderer renderer;
     private Animator animator;
     private Rigidbody rb;
@@ -60,6 +62,10 @@ public class Explodable : MonoBehaviour
         {
             unfreezeFragment?.Unfreeze();
 
+            if(transform.TryGetComponent(out Collider collider))
+            {
+                collider.enabled = false;
+            }
             if(renderer) renderer.enabled = false;
         }
  

@@ -2,10 +2,11 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Telescope : MonoBehaviour
 { 
     [SerializeField] private float camSpeed;
+    [SerializeField] private Image scopeImage;
     private float rangeLimitY = 20;
     private float rangeLimitX = 40;
     private float _rangeLimitX;
@@ -38,11 +39,13 @@ public class Telescope : MonoBehaviour
 
     public void ExitTelescope()
     {
-
+        virtualCamera.Priority = 0;
+        scopeImage.enabled = false;
     }
 
     public void EnterTelescope()
     {
-
+        virtualCamera.Priority = 100;
+        scopeImage.enabled = true;
     }
 }
