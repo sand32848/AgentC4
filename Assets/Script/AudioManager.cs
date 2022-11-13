@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
 
         foreach(Sound s in sounds)
         {
+            s.originalVolume = s.volume;
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.audioClip;
 
@@ -38,6 +39,7 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         if (PauseManager.isPaused) return;
+        print(name);
         Sound s  = Array.Find(sounds, sound => sound.name == name);
         if (s == null) return;
         s.source.Play();
@@ -49,7 +51,7 @@ public class AudioManager : MonoBehaviour
         if (s == null) return;
         if (s.source != currentBGM)
         {
-            currentBGM?.Stop();
+           if(currentBGM) currentBGM.Stop();
             s.source.Play();
         }
 

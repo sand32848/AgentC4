@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Projectile
   - Floor
+  - ProtraitCam
+  - ThrowTarget
+  - CoinCollector
   layers:
   - Default
   - TransparentFX
@@ -21,9 +24,9 @@ TagManager:
   - ProfileCam
   - PortraitNPC
   - PlayerExclude
-  - 
-  - 
-  - 
+  - PostProcess
+  - GunCam
+  - Coin
   - 
   - 
   - 

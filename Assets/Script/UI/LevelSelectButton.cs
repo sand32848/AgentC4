@@ -17,7 +17,7 @@ public class LevelSelectButton : MonoBehaviour, IPointerClickHandler
         levelName = "Level_" + resultString;
 
         levelText = GetComponentInChildren<TextMeshProUGUI>();
-        levelText.text = resultString;
+        levelText.text = transform.GetComponent<LevelProfileTrigger>().profileScriptable.profileName;
     }
 
     public void OnPointerClick(PointerEventData eventData)

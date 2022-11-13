@@ -26,4 +26,9 @@ public class InputManager : MonoBehaviour
         playerControl = new Control();
         playerControl.BaseControl.Enable();
     }
+
+    private void Start()
+    {
+        playerControl.BaseControl.Enable();
+    }
 }

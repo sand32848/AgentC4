@@ -69,7 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodable: 1
   pieces: 0
-  NPC: 1
+  NPC: 0
+  <disableRagdoll>k__BackingField: 0
   unfreezeFragment: {fileID: 0}
   oneTimeExplodeEvent:
     m_PersistentCalls:
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e004f544492600147981d1c3d088c45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Imposter: 0
 --- !u!136 &7157466248478714877
 CapsuleCollider:
   m_ObjectHideFlags: 0

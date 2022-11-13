@@ -13,6 +13,7 @@ public class PlayerThrow : MonoBehaviour
     [SerializeField] private float detonateCooldown;
     private float _throwCooldown;
     private float _detonateCooldown;
+    [SerializeField] private bool enableThrow;
 
     private void Start()
     {
@@ -25,6 +26,8 @@ public class PlayerThrow : MonoBehaviour
     {
         throwCooldown -= Time.deltaTime;
         detonateCooldown -= Time.deltaTime;
+
+        if (!enableThrow) return;
 
         if (InputManager.instance.playerControl.BaseControl.LeftClick.triggered)
         {
@@ -48,10 +51,14 @@ public class PlayerThrow : MonoBehaviour
                 {
                     bombList[i].StartCoroutine("explode");
                 }
-
             }
 
             bombList.Clear();
         }
+    }
+
+    public  void SetThrowEnable(bool _throw)
+    {
+        enableThrow = _throw;
     }
 }

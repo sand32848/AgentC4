@@ -10,6 +10,7 @@ public class Sound
 
     [Range(0f,1f)]
     public float volume;
+    [HideInInspector] public float originalVolume;
     [Range(0f, 3f)]
     public float pitch;
     public bool loop;

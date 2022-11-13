@@ -10,12 +10,13 @@ public class LevelProfileTrigger : MonoBehaviour, IPointerEnterHandler
     [SerializeField] private TextMeshProUGUI profileNameUI;
     [SerializeField] private TextMeshProUGUI profileDescriptionUI;
     [SerializeField] private Image profileImageUI;
-    [SerializeField] private LevelProfileScriptable profileScriptable;
+    private ProtraitCamScript protraitCam => GameObject.FindGameObjectWithTag("ProtraitCam").GetComponent <ProtraitCamScript >();
+    [field : SerializeField] public LevelProfileScriptable profileScriptable { get; private set; }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        profileNameUI.text = profileScriptable.name;
+        protraitCam.findNpc(profileScriptable.name);
+        profileNameUI.text = profileScriptable.profileName;
         profileDescriptionUI.text = profileScriptable.description;
-        profileImageUI.sprite = profileScriptable.imagePorfile;
     }
 
 

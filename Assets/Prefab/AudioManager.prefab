@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 416.50403, y: 257.78574, z: -346.40445}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,38 +46,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: MainTheme
-    audioClip: {fileID: 8300000, guid: 3ba28a83b83534e449da8d3ecbf7764b, type: 3}
+    audioClip: {fileID: 8300000, guid: 4deaaf98a265b6544bec4de7cfc5c522, type: 3}
     volume: 0.105
+    originalVolume: 0
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: GunFire
-    audioClip: {fileID: 8300000, guid: e70eb034c8ae4fe42b00d809716998e4, type: 3}
-    volume: 0.35
-    pitch: 0.6
-    loop: 0
-    source: {fileID: 0}
-  - name: GunCancle
-    audioClip: {fileID: 8300000, guid: 5f2821fc1d23646259af2167fc82a481, type: 3}
-    volume: 0.3
-    pitch: 0.34
-    loop: 0
-    source: {fileID: 0}
-  - name: Goal
-    audioClip: {fileID: 8300000, guid: c6b44363b0b2f8447a49c2e1e91642b1, type: 3}
-    volume: 0.493
+  - name: Level1
+    audioClip: {fileID: 8300000, guid: cc2865d4a9f7c254bae51a6b52959254, type: 3}
+    volume: 0.218
+    originalVolume: 0
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
-  - name: Button
-    audioClip: {fileID: 8300000, guid: 9276693026e2cac408304f305f155690, type: 3}
-    volume: 0.184
-    pitch: 1.28
-    loop: 0
+  - name: Level2
+    audioClip: {fileID: 8300000, guid: 86586f47446d0594186c8af64dcb5b86, type: 3}
+    volume: 0.128
+    originalVolume: 0
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
-  - name: Die
-    audioClip: {fileID: 8300000, guid: ec70ab67d2b25fc42b1e59b418516144, type: 3}
-    volume: 1
-    pitch: 1.28
-    loop: 0
+  - name: Level3
+    audioClip: {fileID: 8300000, guid: 3f97addadf64ca9448271161e176bc70, type: 3}
+    volume: 0.104
+    originalVolume: 0
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

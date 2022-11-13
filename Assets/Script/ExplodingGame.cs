@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,22 +15,21 @@ public class ExplodingGame : MonoBehaviour
     [SerializeField] private TextMeshPro currentTimeText;
     [SerializeField] [ReadOnly] private bool start;
     [SerializeField][ReadOnly] private float score;
+    [SerializeField] private GameObject vasePrefab;
     private float targetScore;
 
-    [SerializeField]private List<Explodable> explodablesList = new List<Explodable>();
-    private Renderer[] render =>  GetComponentsInChildren<Renderer>();
-    private Collider[] colliders => GetComponentsInChildren<Collider>();
+    [SerializeField] private List<GameObject> oldVaseList = new List<GameObject>();
+    private TimeAttackTarget[] timeAttack => GetComponentsInChildren<TimeAttackTarget>();
+    private List<Vector3> vector3s = new List<Vector3>();
 
     void Start()
     {
-        Explodable[] explodes = GetComponentsInChildren<Explodable>();
-        for(int i = 0; i < explodes.Length; i++)
+        for(int i = 0; i < transform.childCount; i++)
         {
-            explodablesList.Add(explodes[i]);
-            explodes[i].explodeAction += updateScore;
+            vector3s.Add(transform.GetChild(i).transform.position);
         }
 
-        targetScore = explodablesList.Count;
+        targetScore = vector3s.Count;
         maxTimeText.text = maxTime.ToString("0.00");
     }
 
@@ -52,7 +52,6 @@ public class ExplodingGame : MonoBehaviour
     public void updateScore()
     {
         score += 1;
-        start = true;
 
         if(score >= targetScore)
         {
@@ -74,16 +73,31 @@ public class ExplodingGame : MonoBehaviour
         start = false;
         currentTime = 0;
         score = 0;
+    }
 
-        foreach (Renderer r in render)
+    public void startGame()
+    {
+        if (start) return;
+
+        start = true;
+
+        foreach (GameObject oldVase in oldVaseList)
         {
-            r.enabled = true;
+            Destroy(oldVase);
         }
 
-        foreach (Collider c in colliders)
+        oldVaseList.Clear();
+
+        foreach (Vector3 v in vector3s)
         {
-            c.enabled = true;
+           GameObject vase = Instantiate(vasePrefab, v, Quaternion.identity);
+            oldVaseList.Add(vase);
+            vase.GetComponent<Explodable>().explodeAction += updateScore;
         }
 
+        foreach (TimeAttackTarget p in timeAttack)
+        {
+            p._particleSystem.Play();
+        }
     }
 }

@@ -14,17 +14,13 @@ public class Thrower : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] private float throwUp;
     [SerializeField] private Rigidbody throwTarget;
+    [SerializeField] private AudioSource throwAudioSource => GetComponent<AudioSource>();
+    [SerializeField] private ThrowGame throwGame;
 
-    private void Update()
-    {
-        if (InputManager.instance.playerControl.BaseControl.E.triggered)
-        {
-            Throw();
-        }
-    }
 
     public void Throw()
     {
+        throwAudioSource.Play();
        Rigidbody rb = Instantiate(throwTarget,transform.position,Quaternion.identity);
         rb.AddForce(new Vector3(Random.Range(throwDirXMin,throwDirXMax),0, Random.Range(throwDirYMin, throwDirYMax)) * throwForce + Vector3.up * throwUp,ForceMode.Impulse);
 

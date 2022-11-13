@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 2413856281161300506}
   - component: {fileID: 2413856281161300515}
   - component: {fileID: 4690200592266676254}
+  - component: {fileID: 8421308519178475849}
   m_Layer: 12
   m_Name: CamNpc
   m_TagString: Untagged
@@ -594,6 +595,20 @@ MonoBehaviour:
   _portrait: {fileID: 0}
   _dialogueColor: {r: 0, g: 0, b: 0, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &8421308519178475849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296305822236919621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fe2d0b5c092d1459fced6a000ef60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  camPosition: {x: -137.803, y: 6.302, z: 3.762}
 --- !u!1 &3349198055979754526
 GameObject:
   m_ObjectHideFlags: 0

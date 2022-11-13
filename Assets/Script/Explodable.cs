@@ -31,6 +31,8 @@ public class Explodable : MonoBehaviour
     private Rigidbody[] rigidArray => GetComponentsInChildren<Rigidbody>();
     private CharacterJoint[] jointArray => GetComponentsInChildren<CharacterJoint>();
 
+    private MeshRenderer[] meshArray => GetComponentsInChildren<MeshRenderer>();
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -103,6 +105,19 @@ public class Explodable : MonoBehaviour
     public void setExplodable(bool _explodable)
     {
         explodable = _explodable;
+    }
+
+    public void setRagdoll(bool _ragdoll)
+    {
+        disableRagdoll = _ragdoll;
+    }
+
+    public void EnableMeshRenderers()
+    {
+        foreach (MeshRenderer m in meshArray)
+        {
+            m.enabled = true;
+        }
     }
 
 }

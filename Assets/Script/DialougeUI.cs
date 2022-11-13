@@ -98,6 +98,7 @@ public class DialougeUI : MonoBehaviour
 
     void OnDialogueStarted(DialogueTree dlg)
     {
+        subtitlesGroup.gameObject.SetActive(true);
         //nothing special...
     }
 

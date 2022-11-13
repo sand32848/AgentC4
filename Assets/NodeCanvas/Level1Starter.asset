@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3f478ef69fbe04fa9ed3664a8a443e, type: 3}
+  m_Name: DialogueTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{},"_actorName":"Chief","_actorParameterID":"79a85f21-ac20-41e6-92bb-f7b656d3271c","_color":{"a":1.0},"_name":"CHIEF","_position":{"x":384.9999,"y":-49.99631},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"I
+    see you have arrived agent."},"_actorName":"Chief","_actorParameterID":"79a85f21-ac20-41e6-92bb-f7b656d3271c","_color":{"a":1.0},"_name":"CHIEF","_position":{"x":326.0,"y":72.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"You
+    objective is to get in the clinic take down the doctor and retrieved the credit
+    card. Good luck."},"_actorName":"Chief","_actorParameterID":"79a85f21-ac20-41e6-92bb-f7b656d3271c","_position":{"x":333.6223,"y":168.0704},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"method":{"_baseInfo":"DialougeRequester|EndDialougeFunction|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":331.8206,"y":280.909},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Chief","_id":"79a85f21-ac20-41e6-92bb-f7b656d3271c","_actorObject":1},{"_keyName":"Receptionist","_id":"5bd6dd77-898a-43c4-9775-ab9e2fd8cba1","_actorObject":2},{"_keyName":"Doctor","_id":"b7d3ba34-ac77-4ab2-acc7-8736fd29d957","_actorObject":3}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: 107, y: 60}
+    _zoomFactor: 0.9195585
+  _haltSerialization: 0
+  actorParameters:
+  - _keyName: Chief
+    _id: 79a85f21-ac20-41e6-92bb-f7b656d3271c
+    _actorObject: {fileID: 0}
+  - _keyName: Receptionist
+    _id: 5bd6dd77-898a-43c4-9775-ab9e2fd8cba1
+    _actorObject: {fileID: 0}
+  - _keyName: Doctor
+    _id: b7d3ba34-ac77-4ab2-acc7-8736fd29d957
+    _actorObject: {fileID: 0}

@@ -98,6 +98,15 @@ public partial class @Control : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Space"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab8816d9-a9fe-4462-b0f9-7f78f3b4d29f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +241,17 @@ public partial class @Control : IInputActionCollection2, IDisposable
                     ""action"": ""Q"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af013b8c-37aa-4ad1-abd3-f886aeed46be"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Space"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -248,6 +268,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
         m_BaseControl_LeftClick = m_BaseControl.FindAction("LeftClick", throwIfNotFound: true);
         m_BaseControl_RightClick = m_BaseControl.FindAction("RightClick", throwIfNotFound: true);
         m_BaseControl_Q = m_BaseControl.FindAction("Q", throwIfNotFound: true);
+        m_BaseControl_Space = m_BaseControl.FindAction("Space", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +336,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
     private readonly InputAction m_BaseControl_LeftClick;
     private readonly InputAction m_BaseControl_RightClick;
     private readonly InputAction m_BaseControl_Q;
+    private readonly InputAction m_BaseControl_Space;
     public struct BaseControlActions
     {
         private @Control m_Wrapper;
@@ -327,6 +349,7 @@ public partial class @Control : IInputActionCollection2, IDisposable
         public InputAction @LeftClick => m_Wrapper.m_BaseControl_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_BaseControl_RightClick;
         public InputAction @Q => m_Wrapper.m_BaseControl_Q;
+        public InputAction @Space => m_Wrapper.m_BaseControl_Space;
         public InputActionMap Get() { return m_Wrapper.m_BaseControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -360,6 +383,9 @@ public partial class @Control : IInputActionCollection2, IDisposable
                 @Q.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
                 @Q.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
                 @Q.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnQ;
+                @Space.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSpace;
+                @Space.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSpace;
+                @Space.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSpace;
             }
             m_Wrapper.m_BaseControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -388,6 +414,9 @@ public partial class @Control : IInputActionCollection2, IDisposable
                 @Q.started += instance.OnQ;
                 @Q.performed += instance.OnQ;
                 @Q.canceled += instance.OnQ;
+                @Space.started += instance.OnSpace;
+                @Space.performed += instance.OnSpace;
+                @Space.canceled += instance.OnSpace;
             }
         }
     }
@@ -402,5 +431,6 @@ public partial class @Control : IInputActionCollection2, IDisposable
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnQ(InputAction.CallbackContext context);
+        void OnSpace(InputAction.CallbackContext context);
     }
 }
