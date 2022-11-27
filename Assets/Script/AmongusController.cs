@@ -7,11 +7,12 @@ using UnityEngine;
 public class AmongusController : MonoBehaviour
 {
     [SerializeField] private bool Imposter;
-    GameObject player => GameObject.FindGameObjectWithTag("Player");
+    GameObject player;  
     ImposterGps imposterGps; 
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         imposterGps = player.GetComponent<ImposterGps>();
        
     }

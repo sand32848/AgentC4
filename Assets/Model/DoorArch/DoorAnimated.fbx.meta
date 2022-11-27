@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -4379138895778929148
     second: Door|DoorAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 1a763e4ccedd4f542b50a5182e9a3261, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -72,4 +72,15 @@ public class AudioManager : MonoBehaviour
         if (s == null) return;
         s.source.Stop();
     }
+
+    public void continuePlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) return;
+
+        s.source.Play();
+
+
+        currentBGM = s.source;
+    }
 }

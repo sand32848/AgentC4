@@ -14,7 +14,7 @@ public class Raycaster : MonoBehaviour
         RaycastHit ray;
         if (InputManager.instance.playerControl.BaseControl.E.triggered)
         {
-            if (Physics.Raycast(cam.transform.position,cam.transform.forward, out ray))
+            if (Physics.Raycast(cam.transform.position,cam.transform.forward, out ray , 5))
             {
                 if(ray.transform.TryGetComponent(out RayReciever rayReciever))
                 {
@@ -22,5 +22,10 @@ public class Raycaster : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(cam.transform.position,cam.transform.forward * 10);
     }
 }

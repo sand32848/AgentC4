@@ -9,6 +9,7 @@ TagManager:
   - ProtraitCam
   - ThrowTarget
   - CoinCollector
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - PostProcess
   - GunCam
   - Coin
-  - 
+  - PlayerOnly
   - 
   - 
   - 

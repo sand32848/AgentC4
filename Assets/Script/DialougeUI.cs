@@ -54,7 +54,7 @@ public class DialougeUI : MonoBehaviour
         get
         {
 #if ENABLE_LEGACY_INPUT_MANAGER
-            return Input.anyKeyDown;
+            return Input.GetKeyDown(KeyCode.Space);
 #elif ENABLE_INPUT_SYSTEM
                 return UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame || UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame;
 #else

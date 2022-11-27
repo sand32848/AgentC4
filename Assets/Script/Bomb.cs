@@ -42,6 +42,11 @@ public class Bomb : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
+    public void Explode()
+    {
+        StartCoroutine(explode());
+    }
+
     IEnumerator explode()
     {
         Destroy(Instantiate(particle, transform.position, Quaternion.identity), 3f);

@@ -12,10 +12,7 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.instance.playerControl.BaseControl.E.triggered)
-        {
-            shakeCamera(0.1f,20);
-        }
+   
     }
 
     public void shakeCamera(float force, int virbratioRate)

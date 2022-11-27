@@ -12,6 +12,7 @@ public class Explodable : MonoBehaviour
     [SerializeField] private bool pieces;
     [SerializeField] private bool NPC;
     [field : SerializeField] public bool disableRagdoll { get;private set; }
+    [SerializeField] private bool DisableKinetic = false;
 
     [ShowIf("pieces")]
     [SerializeField] private UnfreezeFragment unfreezeFragment;
@@ -45,6 +46,12 @@ public class Explodable : MonoBehaviour
             foreach (Rigidbody rb in rigidArray)
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+                if (!DisableKinetic)
+                {
+                    rb.isKinematic = true;
+                }
+           
             }
 
         }
@@ -60,6 +67,9 @@ public class Explodable : MonoBehaviour
     public void onExplode()
     {
         if (!explodable) return;
+
+        setKinematic();
+
         if (pieces)
         {
             unfreezeFragment?.Unfreeze();
@@ -117,6 +127,14 @@ public class Explodable : MonoBehaviour
         foreach (MeshRenderer m in meshArray)
         {
             m.enabled = true;
+        }
+    }
+
+    public void setKinematic()
+    {
+        foreach (Rigidbody rb in rigidArray)
+        {
+            rb.isKinematic = false;
         }
     }
 
