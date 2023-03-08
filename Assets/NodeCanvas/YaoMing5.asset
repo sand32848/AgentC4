@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3f478ef69fbe04fa9ed3664a8a443e, type: 3}
   m_Name: YaoMing5
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Finally
-    we meet. Prepare for your final showdown!"},"_actorName":"Yao Ming","_actorParameterID":"4e7bb544-4ac3-4aec-bfd3-e7655278c428","_position":{"x":367.0205,"y":113.9951},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"method":{"_baseInfo":"DialougeRequester|EndDialougeFunction|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":376.3113,"y":243.8264},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Yao
+  _serializedGraph: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_action":{"method":{"_baseInfo":"DialougeRequester|callDialouge|System.Void","_paramsInfo":"System.String"},"parameters":[{"_type":"System.String","_value":{"$content":"YaoMing","$type":"System.String"}}],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":371.4616,"y":-0.01900244},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"0"},{"statement":{"_text":"Finally
+    we meet. Prepare for your final showdown!"},"_actorName":"Yao Ming","_actorParameterID":"4e7bb544-4ac3-4aec-bfd3-e7655278c428","_position":{"x":367.0205,"y":113.9951},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_action":{"method":{"_baseInfo":"DialougeRequester|EndDialougeFunction|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":376.3113,"y":243.8264},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Yao
     Ming","_id":"4e7bb544-4ac3-4aec-bfd3-e7655278c428","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _objectReferences:
   - {fileID: 0}
@@ -22,8 +22,8 @@ MonoBehaviour:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 30, y: 77}
-    _zoomFactor: 1
+    _translation: {x: 164, y: 89}
+    _zoomFactor: 0.89989483
   _haltSerialization: 0
   actorParameters:
   - _keyName: Yao Ming
