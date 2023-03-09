@@ -1,5 +1,6 @@
 # AgentC4
-Agent C4, an puzzle adventure game where you play as a agent who tasked with an assassination. The catch is that your only weapon is a C4. 💥 [Game Page](https://capbearz.itch.io/super-box-dasher)  💥 | 📖[Commentary](https://apiwatr.wixsite.com/portfolio/post/super-box-dasher-independent)
+![Screenshot 2023-03-09 214435](https://user-images.githubusercontent.com/54356212/224101796-a0e6df06-658c-4ad3-8186-45d371ee4de6.png)
+<br>Agent C4, an puzzle adventure game where you play as a agent who tasked with an assassination. The catch is that your only weapon is a C4. 💥 [Game Page](https://capbearz.itch.io/super-box-dasher)  💥 | 📖[Commentary](https://apiwatr.wixsite.com/portfolio/post/super-box-dasher-independent)
 
 ## Gameplay Montage
 
